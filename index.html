@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Roof Planners — Interior Design Studio, Juhu Mumbai</title>
+<meta name="description" content="Women-led interior design studio crafting considered spaces in Mumbai. Residential & commercial projects across Juhu, Andheri, and beyond.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --bone: #EDE7D9;
+    --espresso: #1C1410;
+    --espresso-80: rgba(28,20,16,0.8);
+    --terra: #C4714A;
+    --terra-light: #D4896A;
+    --muted: #7A6E65;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--espresso);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    width: calc(100% - 3rem);
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+    background: rgba(245,240,232,0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(28,20,16,0.08);
+    border-radius: 100px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--espresso);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s var(--ease);
+  }
+
+  .nav-links a:hover { color: var(--espresso); }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--espresso);
+    color: var(--cream) !important;
+    padding: 0.55rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s var(--ease), transform 0.2s var(--ease);
+  }
+
+  .nav-cta:hover { background: var(--terra); transform: scale(0.98); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 3rem;
+    align-items: center;
+    padding-top: 7rem;
+  }
+
+  .hero-text { padding-right: 2rem; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bone);
+    border: 1px solid rgba(28,20,16,0.1);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .eyebrow span { width: 5px; height: 5px; border-radius: 50%; background: var(--terra); }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--espresso);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em { font-style: italic; color: var(--terra); }
+
+  .hero-body {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--muted);
+    max-width: 44ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-group { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--espresso);
+    color: var(--cream);
+    padding: 0.85rem 1.6rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.3s var(--ease), transform 0.2s var(--ease);
+  }
+
+  .btn-primary:hover { background: var(--terra); transform: scale(0.98); }
+
+  .btn-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(245,240,232,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s var(--ease);
+  }
+
+  .btn-primary:hover .btn-icon { transform: translate(2px, -2px); }
+
+  .btn-ghost {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.3s var(--ease);
+  }
+
+  .btn-ghost:hover { color: var(--espresso); }
+
+  /* ── HERO IMAGE (DOUBLE BEZEL) ── */
+  .hero-visual {
+    position: relative;
+  }
+
+  .bezel-outer {
+    background: rgba(28,20,16,0.06);
+    border: 1px solid rgba(28,20,16,0.08);
+    padding: 0.75rem;
+    border-radius: 2rem;
+  }
+
+  .bezel-inner {
+    border-radius: calc(2rem - 0.375rem);
+    overflow: hidden;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.4);
+    position: relative;
+    aspect-ratio: 4/5;
+  }
+
+  .bezel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: rgba(245,240,232,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(28,20,16,0.08);
+    border-radius: 1rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--terra); flex-shrink: 0; }
+  .badge-text { font-size: 0.75rem; color: var(--espresso); line-height: 1.4; }
+  .badge-text strong { display: block; font-weight: 600; }
+
+  .hero-stat {
+    position: absolute;
+    top: 1.5rem;
+    right: -1.5rem;
+    background: var(--espresso);
+    color: var(--cream);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+
+  .hero-stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .hero-stat .label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; margin-top: 0.25rem; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 7rem 2rem; max-width: 1400px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--terra);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--espresso);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 3.5rem;
+  }
+
+  .service-card {
+    background: var(--bone);
+    border: 1px solid rgba(28,20,16,0.08);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(28,20,16,0.08);
+  }
+
+  .service-card.featured {
+    background: var(--espresso);
+    color: var(--cream);
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 380px;
+    position: relative;
+    overflow: hidden;
+    padding: 2.5rem;
+  }
+
+  .service-card.featured img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+  }
+
+  .service-card.featured .card-content { position: relative; z-index: 1; }
+
+  .service-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(196,113,74,0.12);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--terra);
+  }
+
+  .service-card.featured .service-icon { background: rgba(255,255,255,0.12); color: var(--cream); }
+
+  .service-title { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .service-card.featured .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; }
+  .service-desc { font-size: 0.85rem; line-height: 1.65; color: var(--muted); }
+  .service-card.featured .service-desc { color: rgba(245,240,232,0.7); }
+
+  /* ── WORK ── */
+  .work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .work-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.25rem; }
+
+  .work-card {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    background: var(--bone);
+  }
+
+  .work-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s var(--ease); }
+  .work-card:hover img { transform: scale(1.04); }
+
+  .work-card-main { aspect-ratio: 4/3; }
+  .work-card-side { aspect-ratio: 3/4; }
+
+  .work-label {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    background: rgba(245,240,232,0.88);
+    backdrop-filter: blur(10px);
+    border-radius: 0.75rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.78rem;
+    color: var(--espresso);
+    font-weight: 500;
+  }
+
+  /* ── PROCESS ── */
+  .process-wrap { background: var(--espresso); border-radius: 2rem; padding: 4rem; }
+  .process-wrap .section-label { color: var(--terra-light); }
+  .process-wrap h2 { color: var(--cream); }
+  .process-wrap h2 em { font-style: italic; color: var(--terra-light); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+
+  .step { border-top: 1px solid rgba(245,240,232,0.12); padding-top: 1.5rem; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 400; color: var(--terra); line-height: 1; margin-bottom: 1rem; }
+  .step-title { font-size: 0.9rem; font-weight: 500; color: var(--cream); margin-bottom: 0.5rem; }
+  .step-desc { font-size: 0.8rem; line-height: 1.65; color: rgba(245,240,232,0.55); }
+
+  /* ── CTA STRIP ── */
+  .cta-strip {
+    text-align: center;
+    padding: 6rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-strip h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
+  .cta-strip p { color: var(--muted); line-height: 1.75; margin-bottom: 2.5rem; max-width: 50ch; margin-left: auto; margin-right: auto; }
+
+  .cta-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .contact-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid rgba(28,20,16,0.12);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    text-decoration: none;
+    background: var(--bone);
+    transition: background 0.3s var(--ease), color 0.3s var(--ease);
+  }
+
+  .contact-pill:hover { background: var(--espresso); color: var(--cream); }
+  .contact-pill i { font-size: 1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(28,20,16,0.08);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; }
+  footer p { font-size: 0.75rem; color: var(--muted); }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { width: calc(100% - 2rem); padding: 0.75rem 1rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 6rem; gap: 2rem; padding-left: 1rem; padding-right: 1rem; }
+    .hero-text { padding-right: 0; }
+    .hero-stat { right: 0.5rem; top: 0.75rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card.featured { grid-row: span 1; min-height: 260px; }
+    .work-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .process-wrap { padding: 2rem 1.5rem; }
+    .work-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">The Roof Planners</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+  </ul>
+  <a href="tel:+919137991012" class="nav-cta">
+    Get in Touch
+    <div class="btn-icon"><i class="ph ph-arrow-up-right"></i></div>
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <div class="eyebrow reveal"><span></span>Women-led · Juhu, Mumbai</div>
+    <h1 class="reveal reveal-delay-1">Spaces that<br><em>feel like you.</em></h1>
+    <p class="hero-body reveal reveal-delay-2">
+      We design interiors that go beyond beautiful — spaces shaped around how you actually live, entertain, and rest. From Juhu apartments to full-home renovations across Mumbai.
+    </p>
+    <div class="btn-group reveal reveal-delay-3">
+      <a href="tel:+919137991012" class="btn-primary">
+        Book a Consultation
+        <div class="btn-icon"><i class="ph ph-arrow-up-right"></i></div>
+      </a>
+      <a href="#work" class="btn-ghost">
+        View Our Work <i class="ph ph-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal reveal-delay-2">
+    <div class="bezel-outer">
+      <div class="bezel-inner">
+        <img src="assets/hero.png" alt="Luxury living room designed by The Roof Planners">
+        <div class="hero-badge">
+          <div class="badge-dot"></div>
+          <div class="badge-text">
+            <strong>Now Taking Projects</strong>
+            Juhu · Andheri · Bandra
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">5.0</div>
+      <div class="label">Google Rating</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label reveal">What We Do</div>
+  <h2 class="reveal reveal-delay-1">Considered design,<br>start to finish.</h2>
+
+  <div class="services-grid">
+    <div class="service-card featured reveal">
+      <img src="assets/proj1.png" alt="Interior project">
+      <div class="card-content">
+        <div class="service-icon"><i class="ph ph-house-line"></i></div>
+        <div class="service-title">Full-Home Interior Design</div>
+        <p class="service-desc">From concept to handover — we handle every detail, so you can walk into a finished home that feels entirely yours.</p>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon"><i class="ph ph-couch"></i></div>
+      <div class="service-title">Space Planning</div>
+      <p class="service-desc">Smart layouts that make every square foot earn its place — functional, flow-aware, and beautiful.</p>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon"><i class="ph ph-swatches"></i></div>
+      <div class="service-title">Material & Finish Curation</div>
+      <p class="service-desc">We source and specify materials, textures, and finishes that hold up beautifully over time — not just on the day of the shoot.</p>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon"><i class="ph ph-paint-bucket"></i></div>
+      <div class="service-title">Renovation Consulting</div>
+      <p class="service-desc">Already mid-project? We step in, audit what's there, and bring design coherence to the chaos.</p>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon"><i class="ph ph-buildings"></i></div>
+      <div class="service-title">Commercial Spaces</div>
+      <p class="service-desc">Studios, clinics, offices, and retail — designed to reflect your brand and work harder for your clients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" style="padding-top: 0;">
+  <div class="work-header">
+    <div>
+      <div class="section-label reveal">Selected Projects</div>
+      <h2 class="reveal reveal-delay-1">Our Work</h2>
+    </div>
+    <a href="tel:+919137991012" class="btn-ghost reveal">
+      Discuss Your Project <i class="ph ph-arrow-right"></i>
+    </a>
+  </div>
+  <div class="work-grid">
+    <div class="work-card work-card-main reveal">
+      <img src="assets/proj2.png" alt="Kitchen interior by The Roof Planners">
+      <div class="work-label">3BHK Kitchen Renovation · Juhu</div>
+    </div>
+    <div class="work-card work-card-side reveal reveal-delay-1">
+      <img src="assets/proj1.png" alt="Bedroom interior by The Roof Planners">
+      <div class="work-label">Master Bedroom · Chandrabai Nagar</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="process-wrap reveal">
+    <div class="section-label">How It Works</div>
+    <h2>Simple process,<br><em>zero surprises.</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Discovery Call</div>
+        <p class="step-desc">We start with a 30-minute call to understand your space, lifestyle, timeline, and budget range.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Concept & Moodboard</div>
+        <p class="step-desc">We put together a visual direction — palette, textures, references — so you see the feel before any commitment.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Design & Sourcing</div>
+        <p class="step-desc">Detailed layouts, vendor coordination, and material selection handled entirely by us.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Execution & Handover</div>
+        <p class="step-desc">We supervise on-site until the final cushion is placed. You walk in when it's done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="section-label reveal">Let's Talk</div>
+  <h2 class="reveal reveal-delay-1">Ready to rethink<br>your space?</h2>
+  <p class="reveal reveal-delay-2">Whether you have a full brief or just a feeling — we'd love to hear about your project. No obligations, just a conversation.</p>
+  <a href="tel:+919137991012" class="btn-primary reveal reveal-delay-2" style="margin: 0 auto; width: fit-content; display: inline-flex;">
+    Call +91 91379 91012
+    <div class="btn-icon"><i class="ph ph-phone"></i></div>
+  </a>
+  <div class="cta-contacts reveal reveal-delay-3">
+    <a href="https://maps.google.com/?q=The+Roof+Planners+Juhu+Mumbai" target="_blank" class="contact-pill">
+      <i class="ph ph-map-pin"></i> Chandrabai Nagar, Juhu · Mumbai
+    </a>
+    <a href="tel:+919137991012" class="contact-pill">
+      <i class="ph ph-phone"></i> +91 91379 91012
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">The Roof Planners</div>
+  <p>Interior Design Studio · Juhu, Mumbai 400049</p>
+  <p style="font-size:0.7rem; color: var(--muted);">Women-owned · Est. in Mumbai</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
